@@ -1,26 +1,21 @@
-SuperButton Assistive Technology Button
-=======================================
+2 x Load Cell I2C Interface
+===========================
 Copyright 2020 SuperHouse Automation Pty Ltd <www.superhouse.tv>  
 Designed by Jonathan Oxer
 
-Load-cell based button that can have the required activation force
-adjusted in software, to tune it based on the needs of the user.
+A pair of load cell amplifiers with an ATTiny84 microcontroller to
+provide an I2C interface to the load cells.
 
-![PCB render](images/SB-v2_1-oblique-render.jpg)
+![PCB render](images/2LCI2C-v1_0-oblique-render.jpg)
 
 Features:
 
- * 1 x input connection for a load-cell based button
- * 1 x USB connection for power or to emulate an input device
- * 1 x switched output (either N.O. or N.C.) to control other devices
- * 128x32 OLED to show current force reading and activation threshold
- * Rotary encoder to adjust activation threshold
- * "Tare" button to reset zero point
- * Pulse stretching feature controlled by slide switch
+ * 2 x load cell interfaces
+ * I2C connection
 
 More information is available at:
 
-  http://www.superhouse.tv/sb
+  http://www.superhouse.tv/2lci2c
 
 
 INSTALLATION
