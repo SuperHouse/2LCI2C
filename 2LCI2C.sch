@@ -4368,7 +4368,7 @@ Standard 1x4 header, and screw terminal variations</description>
 <sheet>
 <plain>
 <frame x1="0" y1="0" x2="248.92" y2="185.42" columns="8" rows="5" layer="94"/>
-<text x="142.24" y="20.32" size="3.048" layer="94">2 x Load Cell I2C Interface</text>
+<text x="142.24" y="20.32" size="3.048" layer="94" font="vector">2 x Load Cell I2C Interface</text>
 <text x="172.72" y="14.478" size="1.778" layer="94">V1.0 (2020-06-30)</text>
 <text x="142.24" y="14.478" size="1.778" layer="94">SKU: 2LCI2C</text>
 <text x="141.986" y="9.398" size="1.778" layer="94">(C)2020 SuperHouse Automation: www.superhouse.tv</text>
@@ -4404,13 +4404,13 @@ PB3: Reset</text>
 <wire x1="177.8" y1="177.8" x2="177.8" y2="119.38" width="0.254" layer="97" style="longdash"/>
 <wire x1="177.8" y1="119.38" x2="7.62" y2="119.38" width="0.254" layer="97" style="longdash"/>
 <wire x1="7.62" y1="119.38" x2="7.62" y2="177.8" width="0.254" layer="97" style="longdash"/>
-<text x="129.54" y="167.64" size="1.27" layer="97">Sample rate set to 10Hz by pulling RATE pin low</text>
+<text x="129.54" y="175.26" size="1.27" layer="97">RATE pin pulled HIGH sets sample rate to 80Hz</text>
 <text x="12.7" y="109.22" size="2.54" layer="94">Y Axis Load Cell Amplifier</text>
 <wire x1="7.62" y1="114.3" x2="177.8" y2="114.3" width="0.254" layer="97" style="longdash"/>
 <wire x1="177.8" y1="114.3" x2="177.8" y2="55.88" width="0.254" layer="97" style="longdash"/>
 <wire x1="177.8" y1="55.88" x2="7.62" y2="55.88" width="0.254" layer="97" style="longdash"/>
 <wire x1="7.62" y1="55.88" x2="7.62" y2="114.3" width="0.254" layer="97" style="longdash"/>
-<text x="129.54" y="104.14" size="1.27" layer="97">Sample rate set to 10Hz by pulling RATE pin low</text>
+<text x="129.54" y="172.72" size="1.27" layer="97">XI pin pulled LOW enables internal oscillator</text>
 <text x="187.96" y="119.38" size="2.54" layer="94">I2C Header</text>
 <text x="12.7" y="48.26" size="2.54" layer="94">Processor</text>
 <text x="187.96" y="58.42" size="2.54" layer="94">ICSP Header</text>
@@ -4430,6 +4430,8 @@ PB3: Reset</text>
 <text x="10.16" y="83.82" size="1.778" layer="97">Black</text>
 <text x="10.16" y="86.36" size="1.778" layer="97">White</text>
 <text x="10.16" y="88.9" size="1.778" layer="97">Green</text>
+<text x="129.54" y="109.22" size="1.27" layer="97">XI pin pulled LOW enables internal oscillator</text>
+<text x="129.54" y="111.76" size="1.27" layer="97">RATE pin pulled HIGH sets sample rate to 80Hz</text>
 </plain>
 <instances>
 <instance part="C2" gate="G$1" x="193.04" y="142.24" smashed="yes">
@@ -4682,10 +4684,6 @@ PB3: Reset</text>
 <wire x1="147.32" y1="144.78" x2="149.86" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="144.78" x2="149.86" y2="137.16" width="0.1524" layer="91"/>
 <junction x="149.86" y="137.16"/>
-<pinref part="IC2" gate="G$1" pin="RATE"/>
-<wire x1="147.32" y1="162.56" x2="149.86" y2="162.56" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="162.56" x2="149.86" y2="144.78" width="0.1524" layer="91"/>
-<junction x="149.86" y="144.78"/>
 <pinref part="C12" gate="G$1" pin="2"/>
 <wire x1="165.1" y1="129.54" x2="165.1" y2="127" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="127" x2="149.86" y2="127" width="0.1524" layer="91"/>
@@ -4723,10 +4721,6 @@ PB3: Reset</text>
 <wire x1="147.32" y1="81.28" x2="149.86" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="149.86" y1="81.28" x2="149.86" y2="73.66" width="0.1524" layer="91"/>
 <junction x="149.86" y="73.66"/>
-<pinref part="IC1" gate="G$1" pin="RATE"/>
-<wire x1="147.32" y1="99.06" x2="149.86" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="149.86" y1="99.06" x2="149.86" y2="81.28" width="0.1524" layer="91"/>
-<junction x="149.86" y="81.28"/>
 <pinref part="C6" gate="G$1" pin="2"/>
 <wire x1="165.1" y1="66.04" x2="165.1" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="63.5" x2="149.86" y2="63.5" width="0.1524" layer="91"/>
@@ -5030,15 +5024,20 @@ PB3: Reset</text>
 <wire x1="116.84" y1="160.02" x2="114.3" y2="160.02" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="160.02" x2="114.3" y2="162.56" width="0.1524" layer="91"/>
 <junction x="114.3" y="162.56"/>
-<wire x1="114.3" y1="170.18" x2="165.1" y2="170.18" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="170.18" x2="149.86" y2="170.18" width="0.1524" layer="91"/>
 <junction x="114.3" y="170.18"/>
 <pinref part="C12" gate="G$1" pin="1"/>
+<wire x1="149.86" y1="170.18" x2="165.1" y2="170.18" width="0.1524" layer="91"/>
 <wire x1="165.1" y1="170.18" x2="165.1" y2="137.16" width="0.1524" layer="91"/>
 <pinref part="Q2" gate="G$1" pin="E"/>
 <wire x1="114.3" y1="170.18" x2="101.6" y2="170.18" width="0.1524" layer="91"/>
 <junction x="101.6" y="170.18"/>
 <wire x1="93.98" y1="170.18" x2="101.6" y2="170.18" width="0.1524" layer="91"/>
 <pinref part="P+9" gate="1" pin="VCC"/>
+<pinref part="IC2" gate="G$1" pin="RATE"/>
+<wire x1="147.32" y1="162.56" x2="149.86" y2="162.56" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="162.56" x2="149.86" y2="170.18" width="0.1524" layer="91"/>
+<junction x="149.86" y="170.18"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="VSUP"/>
@@ -5048,15 +5047,20 @@ PB3: Reset</text>
 <wire x1="116.84" y1="96.52" x2="114.3" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="96.52" x2="114.3" y2="99.06" width="0.1524" layer="91"/>
 <junction x="114.3" y="99.06"/>
-<wire x1="114.3" y1="106.68" x2="165.1" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="106.68" x2="149.86" y2="106.68" width="0.1524" layer="91"/>
 <junction x="114.3" y="106.68"/>
 <pinref part="C6" gate="G$1" pin="1"/>
+<wire x1="149.86" y1="106.68" x2="165.1" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="165.1" y1="106.68" x2="165.1" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="E"/>
 <wire x1="114.3" y1="106.68" x2="101.6" y2="106.68" width="0.1524" layer="91"/>
 <junction x="101.6" y="106.68"/>
 <wire x1="93.98" y1="106.68" x2="101.6" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="P+7" gate="1" pin="VCC"/>
+<pinref part="IC1" gate="G$1" pin="RATE"/>
+<wire x1="147.32" y1="99.06" x2="149.86" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="149.86" y1="99.06" x2="149.86" y2="106.68" width="0.1524" layer="91"/>
+<junction x="149.86" y="106.68"/>
 </segment>
 <segment>
 <wire x1="215.9" y1="160.02" x2="215.9" y2="162.56" width="0.1524" layer="91"/>
